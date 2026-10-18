@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusConnect – Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="university-logo">C</div>
+      <div>
+        <h2 class="university-name">COMSATS UNIVERSITY</h2>
+        <p class="university-campuses">Islamabad | Lahore | Abbottabad | Vehari</p>
+      </div>
+    </div>
+    <nav class="sidebar-menu" id="sidebar-menu"></nav>
+    <div class="sidebar-footer">
+      <i class="fa-solid fa-building-columns"></i>
+      <h3>COMSATS UNIVERSITY</h3>
+      <p>A Step Towards a Brighter Future</p>
+    </div>
+  </aside>
+
+  <div class="main-content">
+
+    <!-- ===== TOP BAR ===== -->
+    <header class="topbar">
+      <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Open menu"><i
+          class="fa-solid fa-bars"></i></button>
+
+      <div class="brand">
+        <div class="university-logo small">C</div>
+        <div>
+          <h1 class="brand-title">CampusConnect</h1>
+          <p class="brand-tagline">Learn &nbsp;•&nbsp; Share &nbsp;•&nbsp; Grow</p>
+        </div>
+      </div>
+
+      <label class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" placeholder="Search notes, teachers, events, groups...">
+      </label>
+
+      <div class="topbar-actions">
+        <button class="icon-btn" aria-label="Notifications"><i class="fa-regular fa-bell"></i><span
+            class="notification-count">3</span></button>
+        <button class="icon-btn messages-btn" aria-label="Messages"><i class="fa-regular fa-message"></i></button>
+        <div class="user-menu">
+          <div class="user-avatar">MA</div>
+          <div class="user-info">
+            <p class="user-name">Mushaf Ali</p>
+            <p class="user-semester">BSCS - Semester 5</p>
+          </div>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard" id="dashboard-page">
+
+      <!-- ===== LEFT COLUMN ===== -->
+      <div class="dashboard-left">
+
+        <section class="welcome-banner">
+          <p class="welcome-greeting">Welcome back,</p>
+          <h2 class="welcome-name">Mushaf Ali 👋</h2>
+          <h3 class="welcome-slogan">Your journey to success starts here!</h3>
+          <hr class="welcome-divider">
+          <p class="welcome-description">Access notes, connect with peers, find resources, and make the most of your
+            university life.</p>
+        </section>
+
+        <div class="stats-grid" id="stats-grid"></div>
+
+        <div class="two-column-row">
+          <section class="card announcements-card">
+            <div class="card-header">
+              <h4 class="card-title"><i class="fa-solid fa-bullhorn"></i> Latest Announcements</h4><a
+                class="view-all-link" href="#">View All →</a>
+            </div>
+            <div id="announcements-list"></div>
+          </section>
+          <section class="card recent-notes-card">
+            <div class="card-header">
+              <h4 class="card-title"><i class="fa-solid fa-file-lines"></i> Recently Added Notes</h4><a
+                class="view-all-link" href="#">View All →</a>
+            </div>
+            <div id="recent-notes-list"></div>
+          </section>
+        </div>
+
+        <section class="card quick-access-card">
+          <div class="card-header">
+            <h4 class="card-title"><i class="fa-solid fa-bolt"></i> Quick Access</h4>
+          </div>
+          <div class="quick-access-list" id="quick-access-list"></div>
+        </section>
+
+        <div class="three-column-row">
+          <section class="card teacher-reviews-card">
+            <div class="card-header">
+              <h4 class="card-title"><i class="fa-solid fa-user-graduate"></i> Teacher Reviews</h4><a
+                class="view-all-link" href="#">View All →</a>
+            </div>
+            <div class="preview-item">
+              <div class="user-avatar large">AK</div>
+              <div>
+                <p class="preview-title">Dr. Ahmed Khan</p>
+                <p class="preview-subtitle">Department of Computer Science</p>
+                <p class="rating-stars">★★★★☆ <span>4.2 (124 reviews)</span></p>
+              </div>
+            </div>
+            <button class="outline-btn" id="view-teacher-btn">View Details →</button>
+          </section>
+
+          <section class="card lost-found-card">
+            <div class="card-header">
+              <h4 class="card-title"><i class="fa-solid fa-magnifying-glass"></i> Lost &amp; Found</h4><a
+                class="view-all-link" href="#">View All →</a>
+            </div>
+            <div class="preview-item">
+              <div class="item-photo wallet-photo"></div>
+              <div>
+                <p class="preview-title">Black Wallet <span class="tag tag-green">Found</span></p>
+                <p class="preview-subtitle"><i class="fa-solid fa-location-dot"></i> University Library</p>
+                <p class="preview-subtitle"><i class="fa-regular fa-calendar"></i> 18 Sep 2024</p>
+              </div>
+            </div>
+            <button class="outline-btn" id="contact-finder-btn">Contact</button>
+          </section>
+
+          <section class="card study-groups-card">
+            <div class="card-header">
+              <h4 class="card-title"><i class="fa-solid fa-user-group"></i> Study Groups</h4><a class="view-all-link"
+                href="#">View All →</a>
+            </div>
+            <div class="preview-item">
+              <div class="item-photo group-photo"><i class="fa-solid fa-database"></i></div>
+              <div>
+                <p class="preview-title">Database Systems – BSCS 5th</p>
+                <p class="preview-subtitle">18/30 members</p>
+                <p class="preview-subtitle">Preparation for final examination.</p>
+              </div>
+            </div>
+            <button class="outline-btn" id="join-group-btn">Join Group</button>
+          </section>
+        </div>
+
+        <section class="ai-banner">
+          <div class="ai-banner-robot"><i class="fa-solid fa-robot"></i></div>
+          <div class="ai-banner-text">
+            <h3>Your AI-Powered Learning Companion</h3>
+            <p>Summarize notes, generate quizzes, get instant answers and more!</p>
+            <button class="primary-btn white-btn" id="start-ai-btn">Start Now →</button>
+          </div>
+          <ul class="ai-banner-features">
+            <li><i class="fa-solid fa-file-pdf"></i> Summarize PDFs</li>
+            <li><i class="fa-solid fa-circle-question"></i> Generate Quizzes</li>
+            <li><i class="fa-solid fa-calendar-days"></i> Study Plan</li>
+            <li><i class="fa-solid fa-clone"></i> Flashcards</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- ===== RIGHT COLUMN ===== -->
+      <div class="dashboard-right">
+        <section class="card upcoming-events-card">
+          <div class="card-header">
+            <h4 class="card-title"><i class="fa-regular fa-calendar-check"></i> Upcoming Events</h4><a
+              class="view-all-link" href="#">View All →</a>
+          </div>
+          <div id="upcoming-events-list"></div>
+        </section>
+
+        <section class="card ai-assistant-card">
+          <div class="card-header ai-assistant-header">
+            <i class="fa-solid fa-robot"></i>
+            <div>
+              <h4 class="card-title">AI Study Assistant</h4>
+              <p class="preview-subtitle">Your smart study companion</p>
+            </div>
+          </div>
+          <div id="ai-tools-list"></div>
+          <button class="primary-btn full-width-btn" id="open-ai-btn">Open AI Assistant →</button>
+        </section>
+
+        <section class="card recent-lost-found-card">
+          <div class="card-header">
+            <h4 class="card-title"><i class="fa-solid fa-magnifying-glass"></i> Recent Lost &amp; Found</h4><a
+              class="view-all-link" href="#">View All →</a>
+          </div>
+          <div id="recent-lost-found-list"></div>
+        </section>
+      </div>
+
+    </div>
+
+    <!-- ===== MARKETPLACE PAGE (Buy & Sell) ===== -->
+    <section class="marketplace-page" id="marketplace-page" hidden>
+      <div class="marketplace-header">
+        <div>
+          <h2 class="marketplace-title">Campus Marketplace</h2>
+          <p class="marketplace-subtitle">Buy and sell books, calculators, electronics and more with fellow students.
+          </p>
+        </div>
+        <button class="primary-btn" id="open-sell-modal-btn"><i class="fa-solid fa-plus"></i> Sell an Item</button>
+      </div>
+
+      <div class="card marketplace-filters">
+        <input type="text" id="marketplace-search" placeholder="Search items...">
+        <select id="category-filter">
+          <option value="">All Categories</option>
+          <option>Books</option>
+          <option>Calculators</option>
+          <option>Electronics</option>
+          <option>Bags</option>
+          <option>Stationery</option>
+          <option>Lab Equipment</option>
+        </select>
+        <select id="condition-filter">
+          <option value="">Any Condition</option>
+          <option>New</option>
+          <option>Like New</option>
+          <option>Used</option>
+        </select>
+        <select id="price-sort">
+          <option value="newest">Newest first</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+        </select>
+        <label class="my-listings-toggle"><input type="checkbox" id="my-listings-only"> My listings only</label>
+      </div>
+
+      <p class="listing-count" id="listing-count"></p>
+      <div class="listings-grid" id="listings-grid"></div>
+    </section>
+
+    <!-- ===== SELL AN ITEM (popup form) ===== -->
+    <div class="modal-overlay" id="sell-modal" hidden>
+      <form class="modal" id="sell-form">
+        <h3 class="modal-title">Sell an Item</h3>
+        <label>Item name<input type="text" name="title" required maxlength="60"
+            placeholder="e.g. Database Systems Book"></label>
+        <div class="form-row">
+          <label>Category
+            <select name="category" required>
+              <option>Books</option>
+              <option>Calculators</option>
+              <option>Electronics</option>
+              <option>Bags</option>
+              <option>Stationery</option>
+              <option>Lab Equipment</option>
+            </select>
+          </label>
+          <label>Condition
+            <select name="condition" required>
+              <option>New</option>
+              <option>Like New</option>
+              <option selected>Used</option>
+            </select>
+          </label>
+        </div>
+        <label>Price (Rs.)<input type="number" name="price" required min="1" placeholder="1200"></label>
+        <label>Description<textarea name="description" rows="3" maxlength="200"
+            placeholder="Edition, defects, why you are selling..."></textarea></label>
+        <label>Contact (phone / WhatsApp / email)<input type="text" name="contact" required maxlength="60"
+            placeholder="03XX-XXXXXXX"></label>
+        <div class="modal-actions">
+          <button type="button" class="outline-btn" id="cancel-sell-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Post Listing</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+<footer class="footer">
+  <p>&copy; 2026 CampusConnect. All rights reserved.</p>
+</footer> 
+
+</html>
